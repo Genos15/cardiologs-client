@@ -1,8 +1,8 @@
 import React from "react" 
-import { Container } from "./delineation.model";
-import { DelineationForm } from "./fragments/delineation.form";
-import DelineationResponseView from "./fragments/delineation.response.view";
-import { useAnalyzeECGFile } from "./hooks/delineation.view.hooks";
+import { Container } from "./delineation.style"
+import { DelineationForm } from "./fragments/delineation.form"
+import DelineationResponseFragment from "./fragments/delineation.response.fragment"
+import { useAnalyzeECGFile } from "./hooks/delineation.view.hooks"
 
 
 export const DelineationView: React.FC = () => {
@@ -16,10 +16,10 @@ export const DelineationView: React.FC = () => {
             <div className={'result-block'}>
                 {networkStatus === 'loading' && <div data-testid="loading-block">loading...</div>}
                 {networkStatus === 'success' &&
-                    <DelineationResponseView status={'success'} heartRateBoundary={heartRateBoundary!}/>
+                    <DelineationResponseFragment status={'success'} heartRateBoundary={heartRateBoundary!}/>
                 }
                 {networkStatus === 'error' &&
-                    <DelineationResponseView status={'error'} errorMessage={'Something went wrong'}/>
+                    <DelineationResponseFragment status={'error'} errorMessage={'Something went wrong'}/>
                 }
             </div>
         </Container>

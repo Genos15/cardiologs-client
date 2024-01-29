@@ -1,6 +1,6 @@
 import React, {FormEvent} from "react"
-import { useEcgFormState } from "../hooks/delineation.form.hooks";
-import { Form, FormControl, Input, Button } from "../delineation.model";
+import { useEcgFormState } from "../hooks/delineation.form.hooks"
+import { Form, FormControl, Input, Button } from "../delineation.style"
 
 export interface DelineationFormProps {
     onSubmit: (ecgFile: File, ecgTimestamp?: number) => void;

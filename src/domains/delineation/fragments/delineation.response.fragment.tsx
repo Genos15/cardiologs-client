@@ -1,5 +1,6 @@
 import React from "react" 
-import { HeartRateBoundary, ResponseBlock } from "../delineation.model"
+import { ResponseBlock } from "../delineation.style"
+import { HeartRateBoundary } from "../delineation.model"
 import SuccessResponseAtomic from "./success-response.atomic"
 export type DelineationResponseViewProps = {
     status: 'error'
@@ -9,7 +10,7 @@ export type DelineationResponseViewProps = {
     heartRateBoundary: HeartRateBoundary
 }
 
-const DelineationResponseView: React.FC<DelineationResponseViewProps> = (props) => {
+const DelineationResponseFragment: React.FC<DelineationResponseViewProps> = (props) => {
 
     return (
         <ResponseBlock $status={props.status}>
@@ -21,4 +22,4 @@ const DelineationResponseView: React.FC<DelineationResponseViewProps> = (props) 
 }
 
 
-export default React.memo(DelineationResponseView)
+export default React.memo(DelineationResponseFragment)
